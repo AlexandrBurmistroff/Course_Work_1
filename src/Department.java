@@ -15,8 +15,11 @@ public class Department {
 
     @Override
     public String toString() {
-        return "Department{" +
-                "name='" + name + '\'' +
-                '}';
+        return "Отдел №" + name;
+    }
+
+    public static void main(String[] args) {
+        Department department = new Department("Отдел №");
+        System.out.println(department);
     }
 }

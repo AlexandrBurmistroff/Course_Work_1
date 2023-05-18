@@ -1,29 +1,30 @@
 public class Employee {
-    private static int id;
+    private int id;
+    private static int counter;
     private String fullNameEmployee;
-    private Integer salary;
-    private Department department;
+    private int salary;
+    private int department;
 
-    public Employee(int id, String fullNameEmployee, Integer salary, Department department) {
-        this.id = id;
+    public Employee(String fullNameEmployee, int salary, int department) {
+        this.id = counter++;
         this.fullNameEmployee = fullNameEmployee;
         this.salary = salary;
         this.department = department;
     }
 
-    public static int getId() {
-        return id;
+    public int getId() {
+        return this.id;
     }
 
     public String getFullNameEmployee() {
-        return fullNameEmployee;
+        return this.fullNameEmployee;
     }
 
-    public Integer getSalary() {
-        return salary;
+    public int getSalary() {
+        return this.salary;
     }
 
-    public Department getDepartment() {
+    public int getDepartment() {
         return department;
     }
 
@@ -31,21 +32,19 @@ public class Employee {
         this.fullNameEmployee = fullNameEmployee;
     }
 
-    public void setSalary(Integer salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public void setDepartment(Department department) {
+    public void setDepartment(int department) {
         this.department = department;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                "fullNameEmployee='" + fullNameEmployee + '\'' +
-                ", salary=" + salary +
-                ", department=" + department +
-                '}';
+        return "id:" + id + " " +
+                "ФИО: " + fullNameEmployee + " " +
+                "Зарплата: " + salary + " " +
+                "Отдел:" + department;
     }
 }
